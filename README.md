@@ -1,71 +1,65 @@
-1° Este algoritmo tem a finalidade de 
-treinar uma base de dados relacionada a
-evasão escolar.
+<img src="http://mypy-lang.org/static/mypy_light.svg" alt="mypy logo" width="300px"/>
 
-2° Foi utilizado a linguagem de programação
-python.
+EVASAO: PROJETO SOBRE MACHINE LEARNING COM PYTHON
+=================================================
 
-3° A biblioteca sklearn. Usamos o algoritmo de classificação Nayve Bayes.
+[![Build Status](https://api.travis-ci.com/python/mypy.svg?branch=master)](https://travis-ci.com/python/mypy)
+[![Documentation Status](https://readthedocs.org/projects/mypy/badge/?version=latest)](https://mypy.readthedocs.io/en/latest/?badge=latest)
+[![Chat at https://gitter.im/python/typing](https://badges.gitter.im/python/typing.svg)](https://gitter.im/python/typing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 
-4° O Algoritmo me retorna uma matriz com
-arrays contendo 0 e/ou 1 com as características de cada
-linha da base de dados. Por exemplo: Segue uma linha do arquivo csv
 
-#sexo                                                   Masculino
-#estadocivil                                            CASADO(A)
-#corraca                                                    PARDA
-#comoconcluiensinomedio             Sim Somente em Escola Pública
-#bolsaensinomedio                                   nao Respondeu
-#tipoconstrucaocasa                                     Alvenaria
-#possuibens                                                   Não
-#possuiviaradio                                               Não
-#possuibpcloas                                                Nao
-#possuideficienciavisual                                      Nao
-#possuideficienciafisica                                      Nao
-#familiarpossuideficienciafisica                              Nao
-#parentescoresponsavel1                                       Mae
-#escolaridade_responsável_1                Fundamental incompleto
-#escolaridaderesponsavel2                  Fundamental incompleto
-#situacao                                                       1
-#Name: 0, dtype: object
+3 Pilares de desenvolvimento do projeto
+---------------------------------------
 
-Exemplo de resultado:
+- 1Â° Este algoritmo tem a finalidade de treinar uma base de dados com informaÃ§Ãµes sobre os alunos de uma determinada instituiÃ§Ã£o.
 
-matriz_final[0] = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-matriz_final[1] = [1,0,1,0,1,1,1,0,0,0,1,0,1,1,0]
+- 2Â° Foi utilizado a linguagem de programaÃ§Ã£o python para solucionar o problema.
 
-Esta mesma matriz é responsavel por armazenar (0)falso ou (1)verdadeiro na posição caso atenda a condição
-do código. No final de todas as linhas serão retornados arrays com 15 números de acordo com o número.
-de linhas do arquivo csv.
+- 3Â° A biblioteca sklearn foi o objeto de estudo para o desenvolvimento e implementaÃ§Ã£o.
 
-Exemplo matriz final com 15 valores(cada vetor):
-[[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
-[1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0], 
-[1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0], 
-[1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0], 
-[1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0], 
-[1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0], 
-[1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0], 
-[0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 
-[0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1], 
-[0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1]]
 
-5° Retornar uma matriz de marcação se o aluno está evadido ou não.
+Qual a importÃ¢ncia deste projeto?
+---------------------------------
 
-# exemplo:
+A importÃ¢ncia esta ligado ao fato de tentar prevenir que uma determinada parcela de alunos venha
+desistir do curso. Assim o mesmo ficando com status evadido no sistema acadÃªmico.
 
-[0, 1, 0, 1, 0, 1, 0, 0, 0, 1]
+Segue um exemplo de treinamento com caáº½s e gatos
 
-1 = verdadeiro (evadido)
-0 = falso (nao evadido)
+``` 
+    from sklearn.naive_bayes import MultinomialNB
+    import pandas as pd
 
-O arquivo utilizado foi coxim_filtro.csv
+    bichinho1 = [1, 1, 1]
+    bichinho2 = [1, 0, 1]
+    ichinho3 = [0, 1, 1]
+    bichinho4 = [1, 1, 0]
+    bichinho5 = [0, 1, 0]
+    bichinho6 = [0, 1, 0]
 
-Depois de retornada a matriz com as informações, podemos entao realizar a predição
-dos dados. Segue um link de como pode ser feito.
+    dados = [bichinho1, bichinho2, bichinho3, bichinho4, bichinho5, bichinho6]
 
-https://medium.com/ciencia-descomplicada/machine-learning-classificando-gatos-e-cachorros-d45f1fddbff
+    #Se GATO = 1 / Se CACHORRO = -1
+    marcacoes = [1, 1, 1, -1, -1, -1]
 
-Um forte abraço!!!!!!
 
+    modelo = MultinomialNB()
+    modelo.fit(dados, marcacoes)
+
+```
+
+Inicio Rapido
+--------------
+
+Mypy can be installed using pip:
+
+    $ python3 teste.py
+
+
+
+Fonte
+-----
+
+* Link: [linter-mypy](https://medium.com/ciencia-descomplicada/machine-learning-classificando-gatos-e-cachorros-d45f1fddbff)
 
