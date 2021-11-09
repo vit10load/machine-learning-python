@@ -61,5 +61,5 @@ Mypy can be installed using pip:
 Fonte
 -----
 
-* Link: [linter-mypy](https://medium.com/ciencia-descomplicada/machine-learning-classificando-gatos-e-cachorros-d45f1fddbff)
+* Link: [artigo](https://medium.com/ciencia-descomplicada/machine-learning-classificando-gatos-e-cachorros-d45f1fddbff)
 
